@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-im web-info views index
+im views index
 </body>
 </html>

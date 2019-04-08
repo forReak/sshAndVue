@@ -27,7 +27,7 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
     <!--通过处理器适配器AnnotationMethodHandlerAdapter来开启支持@RequestMapping注解-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-       <!-- <property name="messageConverters">
+        <!--<property name="messageConverters">
             <list>
                 &lt;!&ndash; 设置返回字符串编码 &ndash;&gt;
                 <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -51,7 +51,7 @@
         </property>-->
     </bean>
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
+        <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 </beans>
