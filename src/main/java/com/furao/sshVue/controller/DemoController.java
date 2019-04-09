@@ -33,4 +33,13 @@ public class DemoController {
         resp.setResult(shelfById);
         return resp;
     }
+
+    @RequestMapping("/search")
+    @ResponseBody
+    public RespMap search(Integer id,String shelfNo){
+        RespMap respMap = new RespMap(true,"","success");
+        List<ShelfEntity> shelfAll = shelfService.getShelfAll();
+        respMap.setResult(shelfAll);
+        return respMap;
+    }
 }

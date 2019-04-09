@@ -2,6 +2,7 @@ package com.furao.sshVue.dao.impl;
 
 import com.furao.sshVue.dao.ShelfDao;
 import com.furao.sshVue.entity.ShelfEntity;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -20,8 +21,10 @@ public class ShelfDaoImpl implements ShelfDao {
     }
 
     public List<ShelfEntity> getShelfAll() {
-
-        return null;
+        //hibernate 查询时用的表名是实体类名
+        Query fromTShelf = getSession().createQuery("from ShelfEntity");
+        List<ShelfEntity> list = fromTShelf.list();
+        return list;
     }
 
     public ShelfEntity getShelfById(Integer id) {

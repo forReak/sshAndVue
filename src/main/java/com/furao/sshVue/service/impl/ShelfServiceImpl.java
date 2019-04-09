@@ -18,7 +18,7 @@ public class ShelfServiceImpl implements ShelfService {
     }
 
     public List<ShelfEntity> getShelfAll() {
-        return null;
+        return shelfDao.getShelfAll();
     }
 
     public ShelfEntity getShelfById(Integer id) {
