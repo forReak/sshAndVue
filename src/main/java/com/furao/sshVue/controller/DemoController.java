@@ -42,4 +42,11 @@ public class DemoController {
         respMap.setResult(shelfAll);
         return respMap;
     }
+
+    @RequestMapping("/insertAndModify")
+    @ResponseBody
+    public RespMap insertAndModify(ShelfEntity shelfEntity){
+        RespMap respMap = new RespMap(true,"","success");
+        return respMap;
+    }
 }

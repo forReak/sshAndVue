@@ -107,9 +107,10 @@
 
 <script>
     var tbody = $("#tbody");
+    var insertInfo = $("#insertInfo");
     $(function(){
 
-    })
+    });
 
     function searchShelf(){
         var tableInfo = $("#searchInfo").serialize();
@@ -177,9 +178,52 @@
         $("#insertInfo input[name='"+name+"']").val(v.innerText);
     }
 
-
+    /**
+     * 插入/更新数据
+     */
     function insertOrModify() {
-        
+        var insert = insertInfo.serialize();
+        $.ajax({
+            type: "post",
+            url: "/sshAndVue/insertAndModify",
+            data: insert,
+            dataType: "json",
+            success: function (data) {
+                if (data.flag) {
+
+                }
+                else{
+
+                }
+            },
+            error: function (e) {
+
+            }
+        });
+
     }
+
+    $.fn.checkNull = function(){
+        if(this===""||this===null||this==="null"){
+            return "";
+        }
+    };
+
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
 </script>
 </html>
